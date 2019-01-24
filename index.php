@@ -1,11 +1,13 @@
 <?php
 
+use Hoda\IoC;
+
 require_once __DIR__.'/vendor/autoload.php';
 
-use Hoda\Repositories\CountryRepository;
-use Hoda\Router;
-use Hoda\Services\CountryService;
+require_once __DIR__.'/bootstrap.php';
 
-$response = new Router(new CountryService(new CountryRepository()));
+// Fetch new router instance with dependencies set
 
-return $response->route($argv);
+$router = IoC::resolve('router');
+
+return $router->route($argv);
