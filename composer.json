@@ -1,9 +1,11 @@
 {
     "name": "hoda/language_group",
+    "description": "list all the countries which speaks the same language and checks if given two countries speak the same language by using open rest api",
+    "type": "library",
     "authors": [
         {
-            "name": "hodamobile",
-            "email": "hhussin@mobiledoctors24-7.com"
+            "name": "hoda hussin",
+            "email": "hoda.hussin@gmail.com"
         }
     ],
     "require": {

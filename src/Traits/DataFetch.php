@@ -1,16 +1,18 @@
 <?php
 
 namespace  Hoda\Traits;
+
 /**
- * Trait DataFetch
- * @package Hoda\Traits
+ * Trait DataFetch.
  */
 trait DataFetch
 {
     /**
      * @param $url
-     * @return mixed
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function fetchData($url)
     {
@@ -18,5 +20,6 @@ trait DataFetch
         $response = $client->request('GET', $url, ['exceptions' => false]);
 
         return json_decode($response->getBody()->getContents());
+
     }
 }

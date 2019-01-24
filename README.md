@@ -17,6 +17,7 @@ Composer (https://getcomposer.org/)
 
 Execute the following command in your project root to install this library:
 
+      composer install
       composer dump-autoload -o
 
 
