@@ -30,12 +30,12 @@ class CountryService implements ServiceInterface
      *
      * @return string
      */
-    public function respondOneCountry(string $country): void
+    public function respondOneCountry(string $country): string
     {
         $lang = $this->countryRepo->getLangByCountry($country);
         $similarCountries = $this->formatSimilarCountries($lang);
-        echo  "Country language code: $lang \n";
-        echo  "$country speaks same language with these countries: $similarCountries \n";
+        $response=  "Country language code: $lang \n$country speaks same language with these countries: $similarCountries \n";
+        return $response;
     }
 
     /**
@@ -69,15 +69,16 @@ class CountryService implements ServiceInterface
      *
      * @return string
      */
-    public function respondTwoCountries(string $firstCountry, string $secondCountry): void
+    public function respondTwoCountries(string $firstCountry, string $secondCountry): string
     {
         $firstLang = $this->countryRepo->getLangByCountry($firstCountry);
         $secondLang = $this->countryRepo->getLangByCountry($secondCountry);
 
         if ($firstLang === $secondLang) {
-            echo "$firstCountry and $secondCountry speak the same language\n";
+            $response= "$firstCountry and $secondCountry speak the same language\n";
         } else {
-            echo "$firstCountry and $secondCountry do not speak the same language\n";
+            $response= "$firstCountry and $secondCountry do not speak the same language\n";
         }
+        return $response;
     }
 }

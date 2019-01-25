@@ -13,3 +13,4 @@ IoC::register('router', function () {
 
     return $router;
 });
+

@@ -21,9 +21,10 @@ class TwoCountries{
     /**
      * @param $firstCountry
      * @param $secondCountry
+     * @return string
      */
-    public function respond($firstCountry,$secondCountry)
+    public function respond($firstCountry,$secondCountry):string
     {
-        $this->countryService->respondTwoCountries($firstCountry,$secondCountry);
+        return  $this->countryService->respondTwoCountries($firstCountry,$secondCountry);
     }
 }

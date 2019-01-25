@@ -26,7 +26,7 @@ class CountryRepository implements RepositoryInterface
         $data = $this->fetchData($url);
 
         if(isset($data->status)&& $data->status==404) {
-            throw new \Exception("The Country $country is not valid.");
+            throw new \Exception("The Country $country is not valid." );
         }
 
         return $data[0]->languages[0]->iso639_1;

@@ -2,7 +2,6 @@
 
 namespace  Hoda;
 
-
 /**
  * Class Response.
  */
@@ -11,13 +10,23 @@ class Router
     private $oneCountry;
     private $twoCountries;
 
-    public function __construct(OneCountry $oneCountry,TwoCountries $twoCountries)
+    /**
+     * Router constructor.
+     * @param OneCountry $oneCountry
+     * @param TwoCountries $twoCountries
+     */
+    public function __construct(OneCountry $oneCountry, TwoCountries $twoCountries)
     {
         $this->oneCountry = $oneCountry;
         $this->twoCountries = $twoCountries;
     }
 
-    public function route(array $data)
+    /**
+     * @param array $data
+     * @return string
+     * @throws \Exception
+     */
+    public function route(array $data):string
     {
         if (isset($data[1]) && ! isset($data[2])) {
             return $this->oneCountry->respond($data[1]);

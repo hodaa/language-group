@@ -10,4 +10,4 @@ require_once __DIR__.'/bootstrap.php';
 
 $router = IoC::resolve('router');
 
-return $router->route($argv);
+print ($router->route($argv));
