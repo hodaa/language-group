@@ -21,12 +21,19 @@ Execute the following command in your project root to install this library:
       composer dump-autoload -o
 
 
-## Deployment
+## How To Use 
 
-Execute the following command in your project root :
+#####Execute the following command in your project root :
 
-      php index.php [Countery]
+To get country code and other countries that speak the same languages
 
+      php index.php [Countery Name]
+
+To check if two countries are speaking the same languages or not.
+
+```bash
+php index.php [First country name] [Second country name]
+```
 
 ## Running the tests
   Execute the following command in your project root to install this library:
