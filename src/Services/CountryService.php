@@ -33,8 +33,10 @@ class CountryService implements ServiceInterface
     public function respondOneCountry(string $country): string
     {
         $lang = $this->countryRepo->getLangByCountry($country);
-        $similarCountries = $this->formatSimilarCountries($lang);
-        $response=  "Country language code: $lang \n$country speaks same language with these countries: $similarCountries \n";
+        $countries = $this->countryRepo->getCountriesByLang($lang);
+        $similarCountries = $this->formatSimilarCountries($countries);
+
+        $response=  "Country language code: $lang \n$country speaks same language with these countries: $similarCountries\n";
         return $response;
     }
 
@@ -43,9 +45,8 @@ class CountryService implements ServiceInterface
      *
      * @return string
      */
-    public function formatSimilarCountries(string $lang): string
+    public function formatSimilarCountries(array $countries): string
     {
-        $countries = $this->countryRepo->getCountriesByLang($lang);
         $similar_countries = '';
         foreach ($countries as $key => $country) {
             $countryName = $country->name;

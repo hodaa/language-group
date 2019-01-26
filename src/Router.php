@@ -2,6 +2,8 @@
 
 namespace  Hoda;
 
+use http\Exception\InvalidArgumentException;
+
 /**
  * Class Response.
  */
@@ -33,7 +35,7 @@ class Router
         } elseif (isset($data[1]) && isset($data[2])) {
             return $this->twoCountries->respond($data[1], $data[2]);
         } else {
-            throw  new \Exception('You Should Enter Country');
+            throw  new \InvalidArgumentException('You Should Enter Country');
         }
     }
 }
