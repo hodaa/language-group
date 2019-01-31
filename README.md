@@ -1,7 +1,7 @@
 
-#Language-group
+# Language-group
 
-Command Line will list all the countries which speaks the same language or
+Command line you give it any country,it will type the language that country speaks if you gave it two countries ,it will explain to you if they speak the same language or not.
 
 ## Getting Started
 
